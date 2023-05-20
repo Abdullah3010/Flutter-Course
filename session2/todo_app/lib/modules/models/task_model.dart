@@ -2,7 +2,7 @@ class TaskModel {
   int? id;
   final String name;
   final String description;
-  final bool isDone;
+  bool isDone;
 
   TaskModel({
     this.id,
