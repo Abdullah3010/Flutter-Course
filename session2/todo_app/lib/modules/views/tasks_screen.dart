@@ -15,8 +15,6 @@ class TasksScreen extends StatefulWidget {
 }
 
 class _TasksScreenState extends State<TasksScreen> {
-  int currentIndex = 0;
-
   List<Widget> screens = [
     AllTasksScreen(),
     const CompleteTasksScreen(),
@@ -26,7 +24,6 @@ class _TasksScreenState extends State<TasksScreen> {
   Widget build(BuildContext context) {
     return BlocBuilder<TaskBloc, TaskState>(
       builder: (context, state) {
-        print("state =========> $state");
         final bloc = BlocProvider.of<TaskBloc>(context);
         if (state is TaskInitial) {
           bloc.add(GetAllTasksEvent());
@@ -35,7 +32,7 @@ class _TasksScreenState extends State<TasksScreen> {
           appBar: AppBar(
             title: const Text('Tasks'),
           ),
-          body: screens[currentIndex],
+          body: screens[bloc.currentBottomNavBarIndex],
           floatingActionButton: FloatingActionButton(
             onPressed: () {
               Navigator.push(
@@ -48,11 +45,9 @@ class _TasksScreenState extends State<TasksScreen> {
             child: const Icon(Icons.add),
           ),
           bottomNavigationBar: BottomNavigationBar(
-            currentIndex: currentIndex,
+            currentIndex: bloc.currentBottomNavBarIndex,
             onTap: (index) {
-              setState(() {
-                currentIndex = index;
-              });
+              bloc.add(BottomNavBarChangeEvent(index: index));
             },
             items: const [
               BottomNavigationBarItem(

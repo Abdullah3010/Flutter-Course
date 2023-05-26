@@ -40,3 +40,11 @@ class UpdateIsDoneEvent extends TaskEvent {
     required this.isDone,
   });
 }
+
+class BottomNavBarChangeEvent extends TaskEvent {
+  final int index;
+
+  const BottomNavBarChangeEvent({
+    required this.index,
+  });
+}

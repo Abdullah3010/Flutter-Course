@@ -8,6 +8,10 @@ part 'task_state.dart';
 
 class TaskBloc extends Bloc<TaskEvent, TaskState> {
   List<TaskModel>? tasks;
+  List<TaskModel>? doneTasks;
+  List<TaskModel>? notDoneTasks;
+
+  int currentBottomNavBarIndex = 0;
 
   TaskBloc() : super(TaskInitial()) {
     on<TaskEvent>(
@@ -41,7 +45,16 @@ class TaskBloc extends Bloc<TaskEvent, TaskState> {
           emit(UpdateTaskDone());
         } else if (event is UpdateIsDoneEvent) {
           emit(UpdateIsDoneState(isDone: event.isDone));
+        } else if (event is BottomNavBarChangeEvent) {
+          currentBottomNavBarIndex = event.index;
+          emit(BottomNavBarChangeState(index: event.index));
         }
+        tasks!.forEach((element) {
+          if (element.isDone)
+            doneTasks!.add(element);
+          else
+            notDoneTasks!.add(element);
+        });
       },
     );
   }

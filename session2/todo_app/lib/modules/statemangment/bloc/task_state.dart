@@ -35,3 +35,12 @@ class UpdateIsDoneState extends TaskState {
   @override
   List<Object> get props => [isDone];
 }
+
+class BottomNavBarChangeState extends TaskState {
+  final int index;
+
+  const BottomNavBarChangeState({required this.index});
+
+  @override
+  List<Object> get props => [index];
+}
