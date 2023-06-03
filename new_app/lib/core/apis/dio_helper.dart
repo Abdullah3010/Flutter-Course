@@ -14,12 +14,37 @@ class DioHelper {
     );
   }
 
-  static Future<dynamic> getAllNews() async {
+  static Future<dynamic> getEvrethingNews() async {
     final Response<dynamic> response = await dio.get(
       NewsApiEndpoints.everything,
       queryParameters: {
-        'q': 'Tesla',
-        'language': 'en',
+        'q': 'tesla',
+      },
+    );
+    return response.data;
+  }
+
+  static Future<dynamic> getTopheadlinesNews() async {
+    final Response<dynamic> response = await dio.get(
+      NewsApiEndpoints.topHeadline,
+      queryParameters: {
+        'q': 'corona',
+      },
+    );
+    return response.data;
+  }
+
+  static Future<dynamic> searchForNews({
+    String? query,
+    String? from,
+    String? to,
+  }) async {
+    final Response<dynamic> response = await dio.get(
+      NewsApiEndpoints.everything,
+      queryParameters: {
+        'q': query ?? 'tesla',
+        'from': from ?? '',
+        'to': to ?? '',
       },
     );
     return response.data;

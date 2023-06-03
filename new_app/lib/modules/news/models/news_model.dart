@@ -41,7 +41,7 @@ class ArticlesModel {
 
   factory ArticlesModel.fromJson(Map<String, dynamic> json) {
     return ArticlesModel(
-      author: json['author'] ?? '',
+      author: json['author'] ?? 'Unkonwn',
       title: json['title'] ?? '',
       description: json['description'] ?? '',
       url: json['url'] ?? '',
@@ -64,8 +64,8 @@ class SourceModel {
 
   factory SourceModel.fromJson(Map<String, dynamic> json) {
     return SourceModel(
-      id: json['id'],
-      name: json['name'],
+      id: json['id'] ?? '',
+      name: json['name'] ?? '',
     );
   }
 }

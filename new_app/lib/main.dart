@@ -18,7 +18,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<NewsBloc>(create: (context) => NewsBloc()..add(GetAllNewsEvent())),
+        BlocProvider<NewsBloc>(
+          create: (context) => NewsBloc()
+            ..add(GetEverythingNewsEvent())
+            ..add(GetTopheadlineNewsEvent()),
+        ),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',

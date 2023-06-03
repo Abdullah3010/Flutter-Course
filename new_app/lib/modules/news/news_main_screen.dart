@@ -15,14 +15,19 @@ class NewsMainScreen extends StatelessWidget {
           appBar: AppBar(
             title: const Text('News App'),
           ),
-          body: ListView.builder(
-            itemCount: bloc.news.length,
-            itemBuilder: (context, index) {
-              return ArticleWidget(
-                article: bloc.news[index],
-              );
-            },
-          ),
+          body: bloc.screens[bloc.currentIndex],
+          floatingActionButton: bloc.currentIndex == 2
+              ? FloatingActionButton(
+                  onPressed: () {
+                    bloc.add(SearchForNewsEvent(
+                      searchQuery: bloc.searchController.text,
+                      from: bloc.from.text,
+                      to: bloc.to.text,
+                    ));
+                  },
+                  child: const Icon(Icons.search),
+                )
+              : null,
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: bloc.currentIndex,
             onTap: (index) {
@@ -31,15 +36,15 @@ class NewsMainScreen extends StatelessWidget {
             items: const [
               BottomNavigationBarItem(
                 icon: Icon(Icons.business),
-                label: 'Business',
+                label: 'Eevrything',
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.sports),
-                label: 'Sports',
+                label: 'Top Headlines',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.business),
-                label: 'Business',
+                icon: Icon(Icons.filter_alt_rounded),
+                label: 'Filter',
               ),
             ],
           ),

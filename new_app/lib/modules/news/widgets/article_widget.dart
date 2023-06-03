@@ -29,11 +29,16 @@ class ArticleWidget extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                article.author ?? '',
-                style: const TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
+              SizedBox(
+                width: 200,
+                child: Text(
+                  article.author ?? '',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
               Text(DateFormat('HH:mm').format(article.publishedAt!)),
@@ -50,12 +55,13 @@ class ArticleWidget extends StatelessWidget {
             ),
           ),
           Text(article.content ?? ''),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Image.network(
-              article.urlToImage ?? '',
+          if (article.urlToImage?.isNotEmpty ?? false)
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.network(
+                article.urlToImage ?? '',
+              ),
             ),
-          ),
         ],
       ),
     );

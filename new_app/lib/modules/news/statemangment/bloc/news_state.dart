@@ -15,20 +15,60 @@ class ChangeBottomNavIndexState extends NewsState {
   List<Object?> get props => [index];
 }
 
-class GetAllNewsLoading extends NewsState {
+class GetEverythingNewsLoading extends NewsState {
   @override
   List<Object?> get props => [];
 }
 
-class GetAllNewsDone extends NewsState {
+class GetEverythingNewsDone extends NewsState {
   @override
   List<Object?> get props => [];
 }
 
-class GetAllNewsError extends NewsState {
+class GetEverythingNewsError extends NewsState {
   final String errorMessage;
 
-  GetAllNewsError({
+  GetEverythingNewsError({
+    required this.errorMessage,
+  });
+  @override
+  List<Object?> get props => [errorMessage];
+}
+
+class GetTopheadlineNewsLoading extends NewsState {
+  @override
+  List<Object?> get props => [];
+}
+
+class GetTopheadlineNewsDone extends NewsState {
+  @override
+  List<Object?> get props => [];
+}
+
+class GetTopheadlineNewsError extends NewsState {
+  final String errorMessage;
+
+  GetTopheadlineNewsError({
+    required this.errorMessage,
+  });
+  @override
+  List<Object?> get props => [errorMessage];
+}
+
+class SearchForNewsLoading extends NewsState {
+  @override
+  List<Object?> get props => [];
+}
+
+class SearchForNewsDone extends NewsState {
+  @override
+  List<Object?> get props => [];
+}
+
+class SearchForNewsError extends NewsState {
+  final String errorMessage;
+
+  SearchForNewsError({
     required this.errorMessage,
   });
   @override

@@ -10,7 +10,26 @@ class ChangeBottomNavIndex extends NewsEvent {
   List<Object?> get props => [index];
 }
 
-class GetAllNewsEvent extends NewsEvent {
+class GetEverythingNewsEvent extends NewsEvent {
+  @override
+  List<Object?> get props => [];
+}
+
+class GetTopheadlineNewsEvent extends NewsEvent {
+  @override
+  List<Object?> get props => [];
+}
+
+class SearchForNewsEvent extends NewsEvent {
+  final String? searchQuery;
+  final String? from;
+  final String? to;
+
+  SearchForNewsEvent({
+    this.searchQuery,
+    this.from,
+    this.to,
+  });
   @override
   List<Object?> get props => [];
 }
