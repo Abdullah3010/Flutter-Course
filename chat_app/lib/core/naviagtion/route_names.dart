@@ -7,6 +7,7 @@ class AppRoute {
 class AuthRoutes {
   String baseRoute = '/auth';
   String get login => '$baseRoute/login';
+  String loginWithEmailAndPass(String email, String password) => '$baseRoute/login?email=$email&password=$password';
   String get register => '$baseRoute/register';
 }
 

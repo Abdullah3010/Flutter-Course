@@ -1,4 +1,21 @@
 {
     "login" : "تسجيل الدخول",
-    "register" : "تسجيل"
+    "register" : "تسجيل",
+    "username" : "اسم المستخدم",
+    "password" : "كلمة المرور",
+    "email" : "البريد الإلكتروني",
+    "phone" : "رقم الهاتف",
+    "usernameIsRequiers" : "اسم المستخدم مطلوب",
+    "emailIsNotValid" : "البريد الإلكتروني غير صالح",
+    "phoneIsNotValid" : "رقم الهاتف غير صالح",
+    "passwordIsRequiers" : "كلمة المرور مطلوبة",
+    "passwordIsTooShort" : "كلمة المرور قصيرة جدا",
+    "emailIsRequiers" : "البريد الإلكتروني مطلوب",
+    "phoneIsRequiers" : "رقم الهاتف مطلوب",
+    "userAlreadyExists" : "المستخدم موجود بالفعل",
+    "weekPassword" : "كلمة المرور ضعيفة",
+    "userNotFound" : "المستخدم غير موجود",
+    "wrongPassword" : "كلمة المرور خاطئة",
+    "haveAccount" : "هل لديك حساب؟"
+
 }

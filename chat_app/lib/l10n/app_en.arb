@@ -1,4 +1,21 @@
 {
     "login" : "login",
-    "register" : "register"
+    "register" : "register",
+    "username" : "User name",
+    "password" : "password",
+    "email" : "Email",
+    "phone" : "Phone number",
+    "usernameIsRequiers" : "Username is requiers",
+    "emailIsNotValid" : "Email is not valid",
+    "phoneIsNotValid" : "Phone number is not valid",
+    "passwordIsRequiers" : "Password is requiers",
+    "passwordIsTooShort" : "Password is too short",
+    "emailIsRequiers" : "Email is requiers",
+    "phoneIsRequiers" :  "Phone number is requiers",
+    "userAlreadyExists" : "User already exists",
+    "weekPassword" :  "Week password",
+    "userNotFound" :  "User not found",
+    "wrongPassword" :  "Wrong password",
+    "haveAccount" : "Have account?"
+
 }
