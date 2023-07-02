@@ -1,4 +1,5 @@
 import 'package:chat_app/core/naviagtion/route_names.dart';
+import 'package:chat_app/core/utils/constants.dart';
 import 'package:chat_app/moduls/auth/statemangment/cubit/auth_cubit.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -22,12 +23,12 @@ class _AppInitScreenState extends State<AppInitScreen> {
   Widget build(BuildContext context) {
     FirebaseAuth.instance.authStateChanges().listen((User? user) {
       if (user != null) {
-        print("============> ${user.uid}");
         BlocProvider.of<AuthCubit>(context).getUserData(user.uid).then((value) {
           Modular.to.navigate(AppRoute.chat.home);
         });
       } else {
-        print("============> null");
+        final constant = Modular.get<Constants>();
+        constant.user = null;
         Modular.to.navigate(AppRoute.auth.login);
       }
     });

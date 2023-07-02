@@ -16,6 +16,9 @@
     "weekPassword" : "كلمة المرور ضعيفة",
     "userNotFound" : "المستخدم غير موجود",
     "wrongPassword" : "كلمة المرور خاطئة",
-    "haveAccount" : "هل لديك حساب؟"
+    "haveAccount" : "هل لديك حساب؟",
+    "createAccount" : "إنشاء حساب",
+    "dontHaveFrinds" : "ليس لديك أصدقاء ",
+    "addSomeFrinds" : "أضف بعض الأصدقاء"
 
 }

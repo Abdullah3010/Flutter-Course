@@ -187,7 +187,7 @@ class RegisterScreen extends StatelessWidget {
                     ),
                     TextButton(
                       onPressed: () {
-                        Modular.to.pushNamed(AppRoute.auth.login);
+                        Modular.to.navigate(AppRoute.auth.login);
                       },
                       child: Text(
                         tr(context).haveAccount,

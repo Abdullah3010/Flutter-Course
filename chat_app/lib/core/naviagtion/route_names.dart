@@ -2,6 +2,7 @@ class AppRoute {
   static String init = '/';
   static AuthRoutes auth = AuthRoutes();
   static ChatRoutes chat = ChatRoutes();
+  static AddFrind addFrind = AddFrind();
 }
 
 class AuthRoutes {
@@ -14,4 +15,9 @@ class AuthRoutes {
 class ChatRoutes {
   String baseRoute = '/chat';
   String get home => '$baseRoute/home';
+}
+
+class AddFrind {
+  String baseRoute = '/add_frind';
+  String get addFrind => '$baseRoute/add_frind_list';
 }

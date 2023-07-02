@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:bloc/bloc.dart';
-import 'package:chat_app/core/utils/constanct.dart';
+import 'package:chat_app/core/utils/constants.dart';
 import 'package:chat_app/moduls/auth/models/user_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -73,6 +73,8 @@ class AuthCubit extends Cubit<AuthState> {
   void saveUserData(UserModel user) async {
     final storage = FirebaseFirestore.instance;
     await storage.collection('users').doc(user.uid).set(user.toJson());
+    final constant = Modular.get<Constants>();
+    constant.user = user;
   }
 
   void login({

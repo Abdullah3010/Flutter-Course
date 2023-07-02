@@ -3,11 +3,11 @@ import 'package:chat_app/core/utils/localization_services.dart';
 import 'package:chat_app/core/widgets/form_field_widget.dart';
 import 'package:chat_app/core/widgets/my_button.dart';
 import 'package:chat_app/core/widgets/my_dialog.dart';
-import 'package:chat_app/moduls/auth/models/user_model.dart';
 import 'package:chat_app/moduls/auth/statemangment/cubit/auth_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
@@ -98,6 +98,18 @@ class LoginScreen extends StatelessWidget {
                         },
                         text: tr(context).login,
                       ),
+                TextButton(
+                  onPressed: () {
+                    Modular.to.navigate(AppRoute.auth.register);
+                  },
+                  child: Text(
+                    tr(context).createAccount,
+                    style: TextStyle(
+                      color: Colors.deepPurple,
+                      fontSize: 18.sp,
+                    ),
+                  ),
+                ),
               ],
             ),
           );

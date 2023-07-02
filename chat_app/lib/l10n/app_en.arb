@@ -16,6 +16,9 @@
     "weekPassword" :  "Week password",
     "userNotFound" :  "User not found",
     "wrongPassword" :  "Wrong password",
-    "haveAccount" : "Have account?"
+    "haveAccount" : "Have account?",
+    "createAccount" : "Create account",
+    "dontHaveFrinds" : "You don't have friends",
+    "addSomeFrinds" : "Add some friends"
 
 }

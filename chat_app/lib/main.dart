@@ -1,8 +1,10 @@
 import 'package:chat_app/core/naviagtion/module.dart';
 import 'package:chat_app/firebase_options.dart';
 import 'package:chat_app/l10n/l10n.dart';
+import 'package:chat_app/moduls/add_frinds/statemangment/cubit/add_frind_cubit.dart';
 import 'package:chat_app/moduls/auth/statemangment/cubit/auth_cubit.dart';
 import 'package:chat_app/moduls/auth/views/login/login_screen.dart';
+import 'package:chat_app/moduls/chat/statemangment/cubit/chat_cubit.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -38,6 +40,12 @@ class MyApp extends StatelessWidget {
             providers: [
               BlocProvider<AuthCubit>(
                 create: (_) => AuthCubit(),
+              ),
+              BlocProvider<AddFrindCubit>(
+                create: (_) => AddFrindCubit(),
+              ),
+              BlocProvider<ChatCubit>(
+                create: (_) => ChatCubit(),
               ),
             ],
             child: MaterialApp.router(

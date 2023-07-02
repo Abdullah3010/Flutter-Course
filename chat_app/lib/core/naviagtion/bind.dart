@@ -1,4 +1,4 @@
-import 'package:chat_app/core/utils/constanct.dart';
+import 'package:chat_app/core/utils/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
