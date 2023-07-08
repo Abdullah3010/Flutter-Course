@@ -40,15 +40,15 @@ class MainChatWidget extends StatelessWidget {
             children: [
               Text(
                 user.name,
-                style: const TextStyle(
-                  fontSize: 16,
+                style: TextStyle(
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               Text(
                 user.lastMessage,
-                style: const TextStyle(
-                  fontSize: 16,
+                style: TextStyle(
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.bold,
                 ),
               ),

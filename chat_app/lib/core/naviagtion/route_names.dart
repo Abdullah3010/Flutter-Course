@@ -15,6 +15,7 @@ class AuthRoutes {
 class ChatRoutes {
   String baseRoute = '/chat';
   String get home => '$baseRoute/home';
+  String get chatThread => '$baseRoute/chat';
 }
 
 class AddFrind {
